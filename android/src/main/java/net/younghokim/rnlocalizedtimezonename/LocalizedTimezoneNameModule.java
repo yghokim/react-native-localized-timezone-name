@@ -36,10 +36,10 @@ public class LocalizedTimezoneNameModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
-    public String getLocalizedTimeZoneName(@NonNull String timeZone, @NonNull String locale) {
+    @ReactMethod
+    public void getLocalizedTimeZoneName(@NonNull String timeZone, @NonNull String locale, Promise promise) {
       SimpleDateFormat format = new SimpleDateFormat("z", Locale.forLanguageTag(locale));
 
-      return format.format(getDate());
+      promise.resolve(format.format(getDate()));
     }
 }

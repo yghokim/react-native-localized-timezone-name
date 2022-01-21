@@ -17,6 +17,6 @@ const LocalizedTimezoneName = NativeModules.LocalizedTimezoneName
       }
     );
 
-export function getLocalizedTimeZoneName(timeZone: string, locale: string): string {
+export function getLocalizedTimeZoneName(timeZone: string, locale: string): Promise<string> {
   return LocalizedTimezoneName.getLocalizedTimeZoneName(timeZone, locale)
 }

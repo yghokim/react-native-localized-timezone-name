@@ -2,6 +2,6 @@
 
 @interface RCT_EXTERN_MODULE(LocalizedTimezoneName, NSObject)
 
-RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getLocalizedTimeZoneName:(NSString *)timeZone locale:(NSString *)locale)
+RCT_EXTERN_METHOD(getLocalizedTimeZoneName:(NSString *)timeZone locale:(NSString *)locale: completion:(RCTResponseSenderBlock *)callback)
 
 @end
