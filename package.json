@@ -1,6 +1,6 @@
 {
   "name": "react-native-localized-timezone-name",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Get a human-readable name of a time zone in a given locale.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
