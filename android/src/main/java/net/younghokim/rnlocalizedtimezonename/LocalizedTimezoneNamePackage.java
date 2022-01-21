@@ -1,4 +1,4 @@
-package com.reactnativelocalizedtimezonename;
+package net.younghokim.rnlocalizedtimezonename;
 
 import androidx.annotation.NonNull;
 

@@ -21,7 +21,7 @@ def safeExtGet(prop, fallback) {
 android {
     compileSdkVersion safeExtGet('LocalizedTimezoneName_compileSdkVersion', 29)
     defaultConfig {
-        minSdkVersion safeExtGet('LocalizedTimezoneName_minSdkVersion', 16)
+        minSdkVersion safeExtGet('LocalizedTimezoneName_minSdkVersion', 21)
         targetSdkVersion safeExtGet('LocalizedTimezoneName_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"

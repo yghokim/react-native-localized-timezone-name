@@ -17,6 +17,6 @@ const LocalizedTimezoneName = NativeModules.LocalizedTimezoneName
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return LocalizedTimezoneName.multiply(a, b);
+export function getLocalizedTimeZoneName(timeZone: string, locale: string): string {
+  return LocalizedTimezoneName.getLocalizedTimeZoneName(timeZone, locale)
 }

@@ -11,11 +11,11 @@ npm install react-native-localized-timezone-name
 ## Usage
 
 ```js
-import { multiply } from "react-native-localized-timezone-name";
+import { getLocalizedTimeZoneName } from "react-native-localized-timezone-name";
 
 // ...
 
-const result = await multiply(3, 7);
+const name = getLocalizedTimeZoneName("America/New_York", "en-US"); //name: "Eastern Standard Time"
 ```
 
 ## Contributing
@@ -25,3 +25,7 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+
+## Author
+
+[Young-Ho Kim](http://younghokim.net)

@@ -1,4 +1,4 @@
-package com.reactnativelocalizedtimezonename;
+package net.younghokim.rnlocalizedtimezonename;
 
 import androidx.annotation.NonNull;
 
@@ -8,9 +8,23 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 @ReactModule(name = LocalizedTimezoneNameModule.NAME)
 public class LocalizedTimezoneNameModule extends ReactContextBaseJavaModule {
     public static final String NAME = "LocalizedTimezoneName";
+
+    private static Date _data = null;
+
+    private static @NonNull Date getDate(){
+      if(_data == null){
+        _data = Calendar.getInstance().getTime();
+      }
+      return _data;
+    }
 
     public LocalizedTimezoneNameModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -22,13 +36,10 @@ public class LocalizedTimezoneNameModule extends ReactContextBaseJavaModule {
         return NAME;
     }
 
+    @ReactMethod(isBlockingSynchronousMethod = true)
+    public String getLocalizedTimeZoneName(@NonNull String timeZone, @NonNull String locale) {
+      SimpleDateFormat format = new SimpleDateFormat("z", Locale.forLanguageTag(locale));
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
-    @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+      return format.format(getDate());
     }
-
-    public static native int nativeMultiply(int a, int b);
 }

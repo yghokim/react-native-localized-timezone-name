@@ -1,8 +1,11 @@
+import Foundation
+
 @objc(LocalizedTimezoneName)
 class LocalizedTimezoneName: NSObject {
 
-    @objc(multiply:withB:withResolver:withRejecter:)
-    func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-        resolve(a*b)
+    @objc
+    func getLocalizedTimeZoneName(timeZone: NSString, locale: NSString) -> NSString{
+        let tz = NSTimeZone(name: timeZone as String)!
+        return tz.localizedName(.standard, locale: Locale.init(identifier: locale as String)) as! NSString
     }
 }
